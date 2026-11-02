@@ -1,0 +1,626 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Jordan</title>
+
+    <link rel="shortcut icon" href="#" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <audio controls autoplay id="music">
+      <source src="SOURCES\other\Azaleh - Rainy Nights.mp3" type="audio/ogg" />
+      <source src="SOURCES\other\Azaleh - Rainy Nights.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div id="alert">
+      <p>
+        <b
+          >Az oldal még fejlesztés alatt áll.<br />Ebben a képernyőméretben még
+          nem megtekinthető.</b
+        >
+      </p>
+      <img
+        src="https://cdn.dribbble.com/users/314283/screenshots/1277779/media/ea793b854633f82ecebb5b6336dfdeab.gif"
+        alt="Az oldal még fejlesztés alatt áll, ebben a képernyőméretben még nem megtekinthető."
+      />
+    </div>
+    <div id="Main">
+      <div id="home"></div>
+
+      <div class="Menu">
+        <div class="side_menu">
+          <div class="burger_box">
+            <div class="menu-icon-container">
+              <a href="#" class="menu-icon js-menu_toggle closed">
+                <span class="menu-icon_box">
+                  <span class="menu-icon_line menu-icon_line--1"></span>
+                  <span class="menu-icon_line menu-icon_line--2"></span>
+                  <span class="menu-icon_line menu-icon_line--3"></span>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="side_container">
+            <h2 class="menu_title">Navigáció</h2>
+            <ul class="list_load">
+              <li class="list_item">
+                <a href="#home" id="menu_home">Kezdőlap</a>
+              </li>
+              <li class="list_item">
+                <a href="#about_me" id="menu_about">Rólam</a>
+              </li>
+              <li class="list_item">
+                <a href="#problem_solving" id="menu_problem"
+                  >Problémamegoldás</a
+                >
+              </li>
+              <li class="list_item">
+                <a href="#skills" id="menu_skills">Képességek</a>
+              </li>
+              <li class="list_item">
+                <a href="#work" id="menu_work">Munkák</a>
+              </li>
+              <li class="list_item">
+                <a href="#contact" id="menu_contact">Kapcsolat</a>
+              </li>
+              <!-- <li class="list_item"><a href="#">List Item 06</a></li>
+        <li class="list_item"><a href="#">List Item 07</a></li> -->
+            </ul>
+            <!-- <div class="spacer_box"><p>This is a spacer box.</p></div> -->
+          </div>
+          <div class="light"></div>
+        </div>
+
+        <script src="http://code.jquery.com/jquery-1.9.0rc1.js"></script>
+        <script>
+          $(document).on('click', '.js-menu_toggle.closed', function (e) {
+            e.preventDefault();
+            $('.list_load, .list_item').stop();
+            $(this).removeClass('closed').addClass('opened');
+
+            $('.side_menu').css({ left: '0px' });
+
+            var count = $('.list_item').length;
+            $('.list_load').slideDown(count * 0.6 * 100);
+            $('.list_item').each(function (i) {
+              var thisLI = $(this);
+              timeOut = 100 * i;
+              setTimeout(function () {
+                thisLI.css({
+                  opacity: '1',
+                  'margin-left': '0',
+                });
+              }, 100 * i);
+            });
+          });
+
+          $(document).on('click', '.js-menu_toggle.opened', function (e) {
+            e.preventDefault();
+            $('.list_load, .list_item').stop();
+            $(this).removeClass('opened').addClass('closed');
+
+            $('.side_menu').css({ left: '-250px' });
+
+            var count = $('.list_item').length;
+            $('.list_item').css({
+              opacity: '0',
+              'margin-left': '-20px',
+            });
+            $('.list_load').slideUp(300);
+          });
+        </script>
+      </div>
+
+      <div class="LANG">
+        <a href="#" class="first" onclick="return EN();"></a>
+        <a href="#" class="second" onclick="window.location.reload();"></a>
+        <a href="#" class="third" onclick="return DE();"></a>
+        <a href="#" class="bigOne"></a>
+      </div>
+
+      <div class="wrapper">
+        <ul class="bg-bubbles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+
+      <!-- <div id="gap"></div>  -->
+
+      <div class="welcome_section">
+        <div class="outer">
+          Üdv!<br /><br />A nevem Dániel.<br />
+          <h1>
+            <div class="inner">
+              <span>
+                Szabadúszó<br />
+                Programozó<br />
+                Designer<br />
+              </span>
+            </div>
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;vagyok.
+          </h1>
+          És készen állok a terveid megvalósítására
+        </div>
+
+        <!-- <div class="desc">Szia!<br>A nevem Dániel.<br>Weboldalakat...<br>És készen állok a weboldalad létrehozására</div> -->
+        <img src="SOURCES\PICTURES\tablofoto____2020_e.png" id="tablofoto" />
+        <!-- <section class="focus">
+        <div class="bg"></div>
+      </section> -->
+      </div>
+
+      <section class="top_section">
+        <div id="line_container"></div>
+
+        <img src="SOURCES\PICTURES\document.png" class="first_line" id="doc" />
+        <img src="SOURCES\PICTURES\write.png" class="first_line" id="write" />
+        <img src="SOURCES\PICTURES\hellow.png" class="first_line" id="hellow" />
+
+        <!-- Try to insert more pictures properly to fill up the space and make a nice parallax effect -->
+      </section>
+
+      <!-- BLAH *...-->
+
+      <!-- <section class="content">
+		some textsome textsome textsome textsome textsome textsome textsome text
+
+some textsome textsome textsome textsome textsome textsome textsome textsome textsome textsome textsome textsome textsome textsome textsome textsome textsome textsome textsome textsome textsome textsome textsome text
+
+some textsome textsome textsome textsome textsome textsome textsome text
+
+some textsome textsome textsome textsome textsome textsome textsome textsome textsome textsome textsome text
+some textsome textsome textsome textsome textsome textsome textsome textsome textsome textsome textsome text
+
+some textsome textsome textsome textsome textsome textsome textsome text
+
+some textsome textsome textsome textsome textsome textsome textsome textsome textsome textsome textsome texts
+
+some textsome textsome textsome textsome textsome textsome textsome textsome textsome textsome textsome text
+
+some textsome textsome textsome textsome textsome textsome textsome text
+
+some textsome textsome textsome textsome textsome textsome textsome textsome textsome textsome textsome text
+	</section> -->
+
+      <div id="about_me">
+        <div class="about_inner">
+          <h1 class="ABme">Rólam</h1>
+        </div>
+      </div>
+      <!-- Here can be a type effect, but do not forget to remove the 3 dots after the word comes up -->
+
+      <!-- Cards -->
+      <div class="cards_container">
+        <div class="card">
+          <div class="card__content">
+            <div class="card1__front">
+              <h3 class="card__title">Tapasztalatok</h3>
+              <p class="card__subtitle">Tanulni jó!</p>
+            </div>
+
+            <div class="card__back">
+              <p class="card__body">
+                A középiskolát informatika szakon végeztem. Az érettségi után
+                pedig gazdasági informatikus szakmát választottam.
+                <br /><br />Volt alkalmam kipróbálni magam mint a helyi
+                városháza informatikai osztályának munkatársa.
+                <br /><br />Grafikus és műszaki hibaelhárító munkakörben is van
+                tapasztalatom.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__content">
+            <div class="card2__front">
+              <h3 class="card__title">Érdeklődési kör</h3>
+              <p class="card__subtitle">Az egyik legjobb időtöltés</p>
+            </div>
+
+            <div class="card__back">
+              <p class="card2__body">
+                A programozás lehetőséget ad az alkotásra és az
+                önkifejezésre.<br /><br />A front-end webfejlesztést érzem a
+                legközebb magamhoz, mivel ezáltal számtalan módon szólíthatom
+                meg a felhasználókat.<br /><br />Szabadidőmben szívesen
+                programozok és próbálok ki, eddig ismeretlen funkciókat és
+                módszereket.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__content">
+            <div class="card3__front">
+              <h3 class="card__title">A célok</h3>
+              <p class="card__subtitle">Amikért megéri küzdeni</p>
+            </div>
+
+            <div class="card__back">
+              <p class="card3__body">
+                Célok nélkül, maradandót alkotni nem lehet.<br /><br />Mindenképpen
+                felsőoktatásban szeretném folytatni a tanulmányaimat. Fontosnak
+                tartom, hogy a képzettség mellet tapasztalatot is szerezzek.<br /><br />Tervem,
+                minél sikeresebb szakemberré válni, bizonyítani és valami újat
+                alkotni.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="problem_solving"></h2>
+      <!-- Glassmorphism section -->
+
+      <div class="solution_container">
+        <!-- NE feledd hogy mozogjanak az elemek és legyen hover effect is!-->
+        <div class="wrap">
+          <h2 id="problem">Problémamegoldás</h2>
+          <div class="drop drop1">
+            <div class="drop_Text">
+              <div class="content-slider">
+                <div class="slider">
+                  <div class="mask">
+                    <ul>
+                      <li class="anim1">
+                        <div class="line">Weboldal készítés?</div>
+                      </li>
+                      <li class="anim2">
+                        <div class="line">Design újítás?</div>
+                      </li>
+                      <li class="anim3">
+                        <div class="line">Prezentáció készítés?</div>
+                      </li>
+                      <li class="anim4">
+                        <div class="line">Videó szerkesztés?</div>
+                      </li>
+                      <li class="anim5">
+                        <div class="line">Logó tervezés?</div>
+                      </li>
+                      <!-- <li class="anim6">
+                            <div class="line">Plakát készítés?</div>
+                          
+                          </li> -->
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <p class="help">Segítek!</p>
+            </div>
+            <div class="drop drop2"></div>
+            <div class="drop drop3"></div>
+            <div class="drop drop4"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box"><h1 id="skills">Képességek</h1></div>
+      <!-- Parallax on mousemove effect -->
+
+      <!-- Skills -->
+      <div class="abilities_container">
+        <div class="skills_text">
+          Igyekszem minél több programnyelvet elsajátítani és ennek köszönhetően
+          különböző területeken kipróbálni magam. <br />Nem áll távol tőlem a
+          robotika és mesterséges inteligencia iránti érdeklődés sem.<br />Terveim
+          között szerepel megismerkedni és kipróbálni magam az Android
+          programozás és a rendszerbiztonság világában.
+        </div>
+
+        <section class="skills">
+          <div class="circle">
+            <div class="blur"></div>
+
+            <span style="--i: 1">C</span>
+            <span style="--i: 2">#</span>
+            <span style="--i: 3"> </span>
+            <span style="--i: 4">J</span>
+            <span style="--i: 5">a</span>
+            <span style="--i: 6">v</span>
+            <span style="--i: 7">a</span>
+            <span style="--i: 8">S</span>
+            <span style="--i: 9">c</span>
+            <span style="--i: 10">r</span>
+            <span style="--i: 11">i</span>
+            <span style="--i: 12">p</span>
+            <span style="--i: 13">t</span>
+            <span style="--i: 14"> </span>
+            <span style="--i: 15">R</span>
+            <span style="--i: 16">E</span>
+            <span style="--i: 17">A</span>
+            <span style="--i: 18">C</span>
+            <span style="--i: 19">T</span>
+            <span style="--i: 20"> </span>
+            <span style="--i: 21">P</span>
+            <span style="--i: 22">Y</span>
+            <span style="--i: 23">T</span>
+            <span style="--i: 24">H</span>
+            <span style="--i: 25">O</span>
+            <span style="--i: 26">N</span>
+            <span style="--i: 27"></span>
+            <span style="--i: 28">C</span>
+          </div>
+        </section>
+      </div>
+      <!-- 
+<button onclick="progress()" id="hey">Hey</button> -->
+      <div class="progress_container">
+        <section id="progress_main">
+          <div class="Progressbars">
+            <div class="container_1">
+              <div class="circular-progress_1">
+                <div class="value-container_1">0%</div>
+              </div>
+
+              <div class="language">
+                <a
+                  target="_blank"
+                  href="https://www.google.com/search?q=html&oq=html&aqs=chrome..69i57j69i59j0i512j0i433i512j0i512j69i60l3.998j0j1&sourceid=chrome&ie=UTF-8"
+                  >HTML</a
+                >
+              </div>
+            </div>
+
+            <div class="container_2">
+              <div class="circular-progress_2">
+                <div class="value-container_2">0%</div>
+              </div>
+              <div class="language">
+                <a
+                  target="_blank"
+                  href="https://www.google.com/search?q=css&sxsrf=AOaemvItz8md6K-w9imT57iXjz9z8LVoGg%3A1641920776577&ei=CLndYbveIs3CkwXy-IXQAw&ved=0ahUKEwi7gozFl6r1AhVN4aQKHXJ8AToQ4dUDCA4&uact=5&oq=css&gs_lcp=Cgdnd3Mtd2l6EAMyBAgjECcyBAgjECcyBAgjECcyBwgAELEDEEMyBAgAEEMyBAgAEEMyBAgAEEMyBQgAEIAEMgUIABCABDIFCAAQgAQ6BwgjELADECc6BwgAEEcQsAM6BwgAELADEEM6CgguEMcBENEDEEM6CwgAEIAEELEDEIMBOgsILhCABBDHARCvAToOCC4QgAQQsQMQxwEQowI6CAguEIAEELEDSgQIQRgASgQIRhgAULQOWNgRYJgTaARwAHgAgAFwiAGxApIBAzEuMpgBAKABAcgBCsABAQ&sclient=gws-wiz"
+                  >CSS</a
+                >
+              </div>
+            </div>
+
+            <div class="container_3">
+              <div class="circular-progress_3">
+                <div class="value-container_3">0%</div>
+              </div>
+              <div class="language">
+                <a
+                  target="_blank"
+                  href="https://www.google.com/search?q=javascript&oq=javas&aqs=chrome.5.69i57j69i59l3j35i39j0i433i512j69i61j69i60.4957j0j9&sourceid=chrome&ie=UTF-8"
+                  >JavaScript</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="progress_secondary">
+          <p>
+            Ha programozásról van szó, főként a webfejlesztésre fókuszálok.<br />Ebből
+            adódóan, első sorban ezzel kapcsolatos programnyelveket tervezek
+            megtanulni mint például a PHP, jQuery és React.<br />Természetesen
+            az eddig szerzett tudásomat is igyekszem gyarapítani.
+          </p>
+        </section>
+      </div>
+
+      <div class="softwares_container">
+        <section classs="softwares"></section>
+      </div>
+
+      <div class="work_movn">
+        <section id="movn">
+          <img
+            src="SOURCES\PICTURES\bracket_close.png"
+            data-speed="5"
+            class="layer"
+          />
+          <img
+            src="SOURCES\PICTURES\bracket_open.png"
+            data-speed="5"
+            class="layer"
+          />
+          <img src="SOURCES\PICTURES\colon.png" data-speed="2" class="layer" />
+          <img
+            src="SOURCES\PICTURES\comment.png"
+            data-speed="6"
+            class="layer"
+          />
+          <img src="SOURCES\PICTURES\equal.png" data-speed="8" class="layer" />
+          <img src="SOURCES\PICTURES\int.png" data-speed="-2" class="layer" />
+          <img
+            src="SOURCES\PICTURES\semicolon.png"
+            data-speed="4"
+            class="layer"
+          />
+          <img
+            src="SOURCES\PICTURES\simple_bracket_open.png"
+            data-speed="-9"
+            class="layer"
+          />
+          <img
+            src="SOURCES\PICTURES\simple_bracket_close.png"
+            data-speed="-6"
+            class="layer"
+          />
+          <img src="SOURCES\PICTURES\string.png" data-speed="7" class="layer" />
+          <img
+            src="SOURCES\PICTURES\tag_open.png"
+            data-speed="-5"
+            class="layer"
+          />
+          <img
+            src="SOURCES\PICTURES\tag_close.png"
+            data-speed="5"
+            class="layer"
+          />
+          <h2 class="layer" id="work" data-speed="2">Munkák</h2>
+        </section>
+      </div>
+
+      <div class="work_Main">
+        <div class="work_container">
+          <div class="container">
+            <div class="GLASS_CARD">
+              <div class="content">
+                <h2>01</h2>
+                <h3 id="name_1">A Te Weboldalad</h3>
+                <p id="work_1">
+                  Jelenleg nem rendelkezem több referencia munkával. <br />Veled
+                  viszont változtathatunk ezen. Tervezzük meg a TE weboldalad
+                  még ma!
+                </p>
+                <a href="#contact" id="work_btn_1" target="">Lássunk hozzá</a>
+                <!-- view more -->
+              </div>
+            </div>
+            <div class="GLASS_CARD">
+              <div class="content">
+                <h2>02</h2>
+                <h3 id="name_2">szurasenko.com</h3>
+                <p id="work_2">
+                  Ennek a weboldalnak az újra tervezése volt a feladatom.<br />A
+                  további szerkesztésért, fejlesztési munkákért és a
+                  karbantartásért én vagyok a felelős.
+                </p>
+                <a
+                  href="https://szurasenko.com/"
+                  id="work_btn_2"
+                  target="_blank"
+                  >Megnézem</a
+                >
+              </div>
+            </div>
+            <div class="GLASS_CARD">
+              <div class="content">
+                <h2>03</h2>
+                <h3 id="name_3">IHF</h3>
+                <p id="work_3">
+                  A Nemzetközi humanitárius szövetségnek készült weboldal
+                </p>
+                <a href="https://humanitarianfed.org/" id="work_btn_3"
+                  >Megnézem</a
+                >
+              </div>
+            </div>
+          </div>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+        </div>
+      </div>
+
+      <div class="waves_container">
+        <section>
+          <div class="wave wave1"></div>
+          <div class="wave wave2"></div>
+          <div class="wave wave3"></div>
+          <div class="wave wave4"></div>
+        </section>
+      </div>
+
+      <div class="contact_section">
+        <h2 id="contact">Kapcsolat</h2>
+        <footer>
+          <div class="row">
+            <div class="col">
+              <img
+                src="SOURCES\PICTURES\Logo_IdoIT_nobg.png"
+                onclick="window.location.reload();"
+                class="logo"
+              />
+              <p id="thanks">
+                Köszönöm, hogy ellátogattál az oldalamra!<br />
+                Remélem elnyerte a tetszésed. <br />Ha kérdésed van, bátran
+                keress.
+              </p>
+            </div>
+            <div class="col">
+              <h3 id="office">
+                Iroda
+                <div class="underline"><span></span></div>
+              </h3>
+              <p>Miskolc</p>
+
+              <p class="email-id">danielglonczi2@gmail.com</p>
+              <h4>06/70 554-0674</h4>
+            </div>
+            <div class="col">
+              <h3 id="links">
+                Navigáció
+                <div class="underline"><span></span></div>
+              </h3>
+              <ul>
+                <li><a href="#home" id="footer_home">Kezdőlap</a></li>
+                <li><a href="#about_me" id="footer_about">Rólam</a></li>
+                <li>
+                  <a href="#problem_solving" id="footer_problem"
+                    >Problémamegoldás</a
+                  >
+                </li>
+                <li><a href="#skills" id="footer_skills">Képességek</a></li>
+                <li><a href="#work" id="footer_work">Munkák</a></li>
+              </ul>
+            </div>
+            <div class="col">
+              <h3 id="feedback">
+                Visszajelzés
+                <div class="underline"><span></span></div>
+              </h3>
+              <form>
+                <i class="far fa-envelope"></i>
+                <input
+                  type="email"
+                  name="mail"
+                  placeholder="Az email címed"
+                  required
+                />
+                <button type="submit">
+                  <i class="fas fa-arrow-right"></i>
+                </button>
+              </form>
+              <div class="social-icons">
+                <a
+                  href="https://www.facebook.com/daniel.glonczi"
+                  target="_blank"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="tel:06705540674"><i class="fas fa-phone-alt"></i></a>
+                <a href="mailto:danielglonczi2@gmail.com"
+                  ><i class="fas fa-envelope"></i
+                ></a>
+                <a
+                  href="SOURCES\other\Glonczi_Daniel_oneletrajz_2024.docx"
+                  download
+                  ><i class="fas fa-user-tie"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <p class="copyright">
+            IdoIT Productions &copy 2022 - Minden jog fenntartva
+          </p>
+        </footer>
+      </div>
+
+      <a id="button">
+        <i class="fas fa-angle-up"></i>
+      </a>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script src="https://kit.fontawesome.com/55a46e9f05.js"></script>
+  </body>
+</html>
